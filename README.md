@@ -34,3 +34,4 @@ Coming soon (Day 3+).
 
 ## Progress Log
 - **Day 1:** Project scaffolding, Express server, MongoDB connection setup
+- **Day 2:** User model, JWT authentication (register/login), protected routes middleware

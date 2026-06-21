@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
+import authRoutes from './routes/authRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -24,15 +25,15 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok', message: 'Server is running' });
 });
 
-// Routes will be mounted here as we build them (Day 2 onward)
-// app.use('/api/auth', authRoutes);
+// Routes
+app.use('/api/auth', authRoutes);
 // app.use('/api/expenses', expenseRoutes);
 // app.use('/api/budgets', budgetRoutes);
 // app.use('/api/analytics', analyticsRoutes);
 // app.use('/api/reports', reportRoutes);
 // app.use('/api/ai', aiRoutes);
-
 // 404 handler
+
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
 });
