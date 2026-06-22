@@ -1,4 +1,4 @@
-# Personal Finance Tracker
+# PocketPal
 
 A full-stack personal finance management application built with the MERN stack.
 
@@ -30,8 +30,13 @@ npm run dev
 \`\`\`
 
 ### Frontend
-Coming soon (Day 3+).
+\`\`\`bash
+cd frontend
+npm install
+npm run dev
+\`\`\`
 
 ## Progress Log
 - **Day 1:** Project scaffolding, Express server, MongoDB connection setup
 - **Day 2:** User model, JWT authentication (register/login), protected routes middleware
+- **Day 3:** React frontend with Vite + Tailwind CSS, auth pages (Login/Register)  AuthContext, protected routes
