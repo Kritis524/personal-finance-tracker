@@ -39,4 +39,5 @@ npm run dev
 ## Progress Log
 - **Day 1:** Project scaffolding, Express server, MongoDB connection setup
 - **Day 2:** User model, JWT authentication (register/login), protected routes middleware
-- **Day 3:** React frontend with Vite + Tailwind CSS, auth pages (Login/Register)  AuthContext, protected routes
+- **Day 3:** React frontend with Vite + Tailwind CSS, auth pages (Login/Register), AuthContext, protected routes
+- **Day 4:** Expense model + full CRUD API (create, read, update, delete) with user-scoped data access
