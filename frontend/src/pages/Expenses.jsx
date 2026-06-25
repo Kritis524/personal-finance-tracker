@@ -1,14 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseList from '../components/ExpenseList';
+import FilterBar from '../components/FilterBar';
 import {
   getExpenses,
   createExpense,
   updateExpense,
   deleteExpense,
 } from '../services/expenseService';
+
+const DEFAULT_FILTERS = {
+  search: '',
+  category: 'All',
+  startDate: '',
+  endDate: '',
+};
 
 const Expenses = () => {
   const { user, logout } = useAuth();
@@ -17,21 +25,35 @@ const Expenses = () => {
   const [showForm, setShowForm] = useState(false);
   const [editingExpense, setEditingExpense] = useState(null);
   const [error, setError] = useState('');
+  const [filters, setFilters] = useState(DEFAULT_FILTERS);
 
-  const loadExpenses = async () => {
+  const loadExpenses = useCallback(async (currentFilters) => {
+    setLoading(true);
     try {
-      const data = await getExpenses();
+      const params = {};
+      if (currentFilters.search) params.search = currentFilters.search;
+      if (currentFilters.category !== 'All') params.category = currentFilters.category;
+      if (currentFilters.startDate) params.startDate = currentFilters.startDate;
+      if (currentFilters.endDate) params.endDate = currentFilters.endDate;
+
+      const data = await getExpenses(params);
       setExpenses(data);
+      setError('');
     } catch (err) {
       setError('Failed to load expenses');
     } finally {
       setLoading(false);
     }
-  };
-
-  useEffect(() => {
-    loadExpenses();
   }, []);
+
+  // Debounce: wait 400ms after the user stops typing/changing filters before calling the API
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      loadExpenses(filters);
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [filters, loadExpenses]);
 
   const handleAddClick = () => {
     setEditingExpense(null);
@@ -50,8 +72,8 @@ const Expenses = () => {
         prev.map((exp) => (exp._id === updated._id ? updated : exp))
       );
     } else {
-      const created = await createExpense(formData);
-      setExpenses((prev) => [created, ...prev]);
+      await createExpense(formData);
+      loadExpenses(filters); // reload so new expense respects current filters/sort
     }
     setShowForm(false);
     setEditingExpense(null);
@@ -94,6 +116,7 @@ const Expenses = () => {
             <h2 className="text-2xl font-semibold text-gray-800">Expenses</h2>
             <p className="text-gray-500 text-sm mt-1">
               Total: <span className="font-semibold text-gray-700">₹{totalAmount.toLocaleString('en-IN')}</span>
+              {' '}({expenses.length} {expenses.length === 1 ? 'expense' : 'expenses'})
             </p>
           </div>
           {!showForm && (
@@ -125,6 +148,12 @@ const Expenses = () => {
             />
           </div>
         )}
+
+        <FilterBar
+          filters={filters}
+          onFilterChange={setFilters}
+          onReset={() => setFilters(DEFAULT_FILTERS)}
+        />
 
         {loading ? (
           <p className="text-gray-400 text-center py-12">Loading expenses...</p>

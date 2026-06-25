@@ -31,7 +31,7 @@ export const createExpense = async (req, res) => {
 // @access  Private
 export const getExpenses = async (req, res) => {
   try {
-    const { category, startDate, endDate, sort } = req.query;
+    const { category, startDate, endDate, sort, search } = req.query;
 
     const filter = { user: req.user.id };
 
@@ -43,6 +43,13 @@ export const getExpenses = async (req, res) => {
       filter.date = {};
       if (startDate) filter.date.$gte = new Date(startDate);
       if (endDate) filter.date.$lte = new Date(endDate);
+    }
+
+    if (search) {
+      filter.$or = [
+        { title: { $regex: search, $options: 'i' } },
+        { notes: { $regex: search, $options: 'i' } },
+      ];
     }
 
     const sortOrder = sort === 'oldest' ? 1 : -1; // default: newest first

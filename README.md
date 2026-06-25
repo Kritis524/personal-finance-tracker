@@ -41,4 +41,6 @@ npm run dev
 - **Day 2:** User model, JWT authentication (register/login), protected routes middleware
 - **Day 3:** React frontend with Vite + Tailwind CSS, auth pages (Login/Register), AuthContext, protected routes
 - **Day 4:** Expense model + full CRUD API (create, read, update, delete) with user-scoped data access
-**Day 5:** Expense tracking UI — add/edit/delete expenses, running total, Dashboard navigation
+**Day 5:** Expense tracking UI — add/edit/delete expenses, running total, Dashboard navigation 
+**Day 6:** Category filtering, date range filtering, and debounced search for expenses
+ 
