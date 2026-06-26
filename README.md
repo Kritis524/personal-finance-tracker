@@ -43,4 +43,4 @@ npm run dev
 - **Day 4:** Expense model + full CRUD API (create, read, update, delete) with user-scoped data access
 **Day 5:** Expense tracking UI — add/edit/delete expenses, running total, Dashboard navigation 
 **Day 6:** Category filtering, date range filtering, and debounced search for expenses
- 
+ **Day 7:** Budget model + budget planning API with automatic spending progress calculation

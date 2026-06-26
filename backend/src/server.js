@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import expenseRoutes from './routes/expenseRoutes.js';
+import budgetRoutes from './routes/budgetRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -29,7 +30,7 @@ app.get('/api/health', (req, res) => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/expenses', expenseRoutes);
-// app.use('/api/budgets', budgetRoutes);
+ app.use('/api/budgets', budgetRoutes);
 // app.use('/api/analytics', analyticsRoutes);
 // app.use('/api/reports', reportRoutes);
 // app.use('/api/ai', aiRoutes);
