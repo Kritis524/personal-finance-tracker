@@ -45,3 +45,4 @@ npm run dev
 - **Day 6:** Category filtering, date range filtering, and debounced search for expenses
 - **Day 7:** Budget model + budget planning API with automatic spending progress calculation
 - **Day 8:** Budget planning UI — set budgets per category, progress bars with color-coded alerts, month navigation
+- **Day 9:** Analytics backend — aggregation endpoints for spending by category, monthly trend, and summary stats
