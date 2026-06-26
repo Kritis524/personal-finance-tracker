@@ -44,3 +44,4 @@ npm run dev
 - **Day 5:** Expense tracking UI — add/edit/delete expenses, running total, Dashboard navigation
 - **Day 6:** Category filtering, date range filtering, and debounced search for expenses
 - **Day 7:** Budget model + budget planning API with automatic spending progress calculation
+- **Day 8:** Budget planning UI — set budgets per category, progress bars with color-coded alerts, month navigation

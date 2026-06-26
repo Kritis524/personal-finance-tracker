@@ -28,18 +28,21 @@ const Dashboard = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
           <Link
-            to="/expenses"
-            className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
-          >
-            <p className="font-semibold text-gray-800">💸 Expenses</p>
-            <p className="text-sm text-gray-500 mt-1">Track your spending</p>
-          </Link>
+    to="/expenses"
+    className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
+  >
+    <p className="font-semibold text-gray-800">💸 Expenses</p>
+    <p className="text-sm text-gray-500 mt-1">Track your spending</p>
+  </Link>
 
-          <div className="bg-white rounded-xl shadow-sm p-5 border border-gray-100 opacity-50">
-            <p className="font-semibold text-gray-800">📊 Budgets</p>
-            <p className="text-sm text-gray-500 mt-1">Coming soon</p>
-          </div>
-        </div>
+  <Link
+    to="/budgets"
+    className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
+  >
+    <p className="font-semibold text-gray-800">📊 Budgets</p>
+    <p className="text-sm text-gray-500 mt-1">Set spending limits</p>
+  </Link>
+</div>
       </main>
     </div>
   );
