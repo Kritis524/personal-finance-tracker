@@ -26,8 +26,8 @@ const Dashboard = () => {
           Here's a quick look at where you can manage your finances.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md">
-          <Link
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
+  <Link
     to="/expenses"
     className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
   >
@@ -41,6 +41,14 @@ const Dashboard = () => {
   >
     <p className="font-semibold text-gray-800">📊 Budgets</p>
     <p className="text-sm text-gray-500 mt-1">Set spending limits</p>
+  </Link>
+
+  <Link
+    to="/analytics"
+    className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
+  >
+    <p className="font-semibold text-gray-800">📈 Analytics</p>
+    <p className="text-sm text-gray-500 mt-1">View spending insights</p>
   </Link>
 </div>
       </main>
