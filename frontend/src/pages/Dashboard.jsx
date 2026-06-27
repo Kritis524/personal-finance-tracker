@@ -26,31 +26,39 @@ const Dashboard = () => {
           Here's a quick look at where you can manage your finances.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
-  <Link
-    to="/expenses"
-    className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
-  >
-    <p className="font-semibold text-gray-800">💸 Expenses</p>
-    <p className="text-sm text-gray-500 mt-1">Track your spending</p>
-  </Link>
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 max-w-3xl">
+          <Link
+            to="/expenses"
+            className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
+          >
+            <p className="font-semibold text-gray-800">💸 Expenses</p>
+            <p className="text-sm text-gray-500 mt-1">Track your spending</p>
+          </Link>
 
-  <Link
-    to="/budgets"
-    className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
-  >
-    <p className="font-semibold text-gray-800">📊 Budgets</p>
-    <p className="text-sm text-gray-500 mt-1">Set spending limits</p>
-  </Link>
+          <Link
+            to="/budgets"
+            className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
+          >
+            <p className="font-semibold text-gray-800">📊 Budgets</p>
+            <p className="text-sm text-gray-500 mt-1">Set spending limits</p>
+          </Link>
 
-  <Link
-    to="/analytics"
-    className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
-  >
-    <p className="font-semibold text-gray-800">📈 Analytics</p>
-    <p className="text-sm text-gray-500 mt-1">View spending insights</p>
-  </Link>
-</div>
+          <Link
+            to="/analytics"
+            className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
+          >
+            <p className="font-semibold text-gray-800">📈 Analytics</p>
+            <p className="text-sm text-gray-500 mt-1">View spending insights</p>
+          </Link>
+
+          <Link
+            to="/reports"
+            className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
+          >
+            <p className="font-semibold text-gray-800">📄 Reports</p>
+            <p className="text-sm text-gray-500 mt-1">Download monthly reports</p>
+          </Link>
+        </div>
       </main>
     </div>
   );

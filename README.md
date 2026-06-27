@@ -48,3 +48,4 @@ npm run dev
 - **Day 9:** Analytics backend — aggregation endpoints for spending by category, monthly trend, and summary stats
 - **Day 10:** Analytics dashboard UI — summary cards, category pie chart, spending trend line chart (Recharts)
 - **Day 11:** Monthly reports backend — report generation endpoint plus CSV and PDF export
+- **Day 12:** Monthly reports UI — view report summary by month, download as CSV or PDF
