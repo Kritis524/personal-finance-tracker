@@ -56,7 +56,7 @@ ${budgetSummary.length > 0 ? `Budget status: ${budgetSummary.join('; ')}` : 'No 
 Respond with ONLY a JSON array of strings, no markdown, no extra text. Each string should be one suggestion, under 25 words. Example format:
 ["Suggestion one here", "Suggestion two here", "Suggestion three here"]`;
 
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY, apiVersion: 'v1' });
 
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',

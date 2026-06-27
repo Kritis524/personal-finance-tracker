@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import AISuggestions from '../components/AISuggestions';
 
 const Dashboard = () => {
   const { user, logout } = useAuth();
@@ -26,7 +27,7 @@ const Dashboard = () => {
           Here's a quick look at where you can manage your finances.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 max-w-3xl">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 max-w-3xl mb-8">
           <Link
             to="/expenses"
             className="bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition border border-gray-100"
@@ -58,6 +59,10 @@ const Dashboard = () => {
             <p className="font-semibold text-gray-800">📄 Reports</p>
             <p className="text-sm text-gray-500 mt-1">Download monthly reports</p>
           </Link>
+        </div>
+
+        <div className="max-w-3xl">
+          <AISuggestions />
         </div>
       </main>
     </div>

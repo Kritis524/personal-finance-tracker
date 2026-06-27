@@ -49,4 +49,4 @@ npm run dev
 - **Day 10:** Analytics dashboard UI — summary cards, category pie chart, spending trend line chart (Recharts)
 - **Day 11:** Monthly reports backend — report generation endpoint plus CSV and PDF export
 - **Day 12:** Monthly reports UI — view report summary by month, download as CSV or PDF
-- **Day 13:** AI-powered spending suggestions backend using Google Gemini API
+- **Day 13:** AI-powered spending suggestions — backend (Google Gemini API) and frontend, with insights card on the Dashboard
