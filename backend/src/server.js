@@ -9,6 +9,7 @@ import expenseRoutes from './routes/expenseRoutes.js';
 import budgetRoutes from './routes/budgetRoutes.js';
 import analyticsRoutes from './routes/analyticsRoutes.js';
 import reportRoutes from './routes/reportRoutes.js';
+import aiRoutes from './routes/aiRoutes.js';
 
 dotenv.config();
 connectDB();
@@ -35,7 +36,7 @@ app.use('/api/expenses', expenseRoutes);
 app.use('/api/budgets', budgetRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/reports', reportRoutes);
-// app.use('/api/ai', aiRoutes);
+app.use('/api/ai', aiRoutes);
 
 // 404 handler
 app.use((req, res) => {
