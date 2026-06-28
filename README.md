@@ -50,3 +50,4 @@ npm run dev
 - **Day 11:** Monthly reports backend — report generation endpoint plus CSV and PDF export
 - **Day 12:** Monthly reports UI — view report summary by month, download as CSV or PDF
 - **Day 13:** AI-powered spending suggestions — backend (Google Gemini API) and frontend, with insights card on the Dashboard
+- **Day 15:** Design system foundation — dark/light theme, sidebar navigation, reusable layout components (Sidebar, AppLayout, PageHeader, Card)
